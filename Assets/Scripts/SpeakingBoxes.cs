@@ -3,7 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-[RequireComponent(typeof(Image))]
+
 public class SpeakingBoxes : MonoBehaviour
 {
    [System.Serializable]
@@ -12,16 +12,15 @@ public class SpeakingBoxes : MonoBehaviour
       public string SubjectText;
       [TextArea]
       public string DialogueToPrint;
-     
+
       public bool Skippable;
       [Range(.07f, 35f)]
       public float LettersPerSecond;
-      public float Order;
+
+      [Range(1f, 6f)]
+      public float Emotion;
+      //this will be for the emotion display 
    }
-      
-   [Range(1f, 2f)]
-   public float People;
-    Sprite Detective, Nothing, Wimbly;
 
    [SerializeField] private DialogueSegment[] DialogueSegments;
    [Space]
@@ -43,7 +42,10 @@ public class SpeakingBoxes : MonoBehaviour
    //panel being moved to
    [SerializeField] private GameObject Remove;
    //panel being moved from
-
+   [SerializeField] private Animator Person;
+   //the animator for what our emotions draws from
+   [Range(1f, 6f)]
+   private float Emotion;
    private int DialogueIndex;
    private bool PlayingDialogue;
    private bool Skip;
@@ -58,80 +60,121 @@ public class SpeakingBoxes : MonoBehaviour
       selfDestructing.SetActive(true);
    }
 
-   Detective = Resources.Load<Sprite>("UICharacters/Detective/rest");
-   Wimbly = Resources.Load<Sprite>("UICharacters/Wimbly");
-   Nothing = Resources.Load<Sprite>("UICharacters/Empty");
    
  }
   void Update()
   {
-   
-    SPEAK();
+      Speak();
    if (Input.GetKeyDown(KeyCode.Space))
-   {
-      if (DialogueIndex == DialogueSegments.Length)
       {
-         enabled = false;
-         if (moveOn){
-            if (hasAnim){
-            Debug.Log("Yep");
+         if (DialogueIndex == DialogueSegments.Length)
+         {
+            enabled = false;
+            if (moveOn)
+            {
+               if (hasAnim)
+               {
+                  Debug.Log("Yep");
+               }
+               Add.SetActive(true);
+               Remove.SetActive(false);
             }
-            Add.SetActive(true);
-            Remove.SetActive(false);
+            if (selfDestruct)
+            {
+               selfDestructing.SetActive(false);
+            }
+            if (changeScene)
+            {
+               SceneManager.LoadScene(sceneName);
+            }
+            return;
          }
-         if (selfDestruct)
+         if (!PlayingDialogue)
          {
-            selfDestructing.SetActive(false);
+            StartCoroutine(PlayDialogue(DialogueSegments[DialogueIndex]));
+
          }
-         if (changeScene)
+         else
          {
-            SceneManager.LoadScene(sceneName);
-         }
-         return;
-      }
-      if (!PlayingDialogue){
-         StartCoroutine(PlayDialogue(DialogueSegments[DialogueIndex]));
-                   
-      }
-      else
-      {
-         if (DialogueSegments[DialogueIndex].Skippable){
-            Skip = true;
+            if (DialogueSegments[DialogueIndex].Skippable)
+            {
+               Skip = true;
+            }
          }
       }
-   }
   }
- void SPEAK()
-    {
-        // This is the main thing here. I'm just getting it to log an error if there's no Image component.
-        Image voice;
-        voice = gameObject.GetComponent<Image>();
-            Debug.Log("I have no Image component! Fix meeeeeeeeeeeee");
-      
-        if(People == 2)
-        {
-            voice.sprite = Wimbly;
-            Debug.Log("It works");
-        }
-        if(People == 1)
-        {
-            voice.sprite = Detective;
-            Debug.Log("NarratorsUp!");
-        }
-        if(People == 0)
-        {
-            voice.sprite = Nothing;
-            Debug.Log("Nope!");
-        }
-    }
-   
+
+   public void Speak()
+   {
+      if (Emotion == 1)
+      {
+         Person.SetBool("idle", true);
+         Person.SetBool("angry", false);
+         Person.SetBool("thinks", false);
+         Person.SetBool("confused", false);
+         Person.SetBool("sad", false);
+         Person.SetBool("happy", false);
+
+      }
+      else if (Emotion == 2)
+      {
+         Person.SetBool("angry", true);
+         Person.SetBool("thinks", false);
+         Person.SetBool("confused", false);
+         Person.SetBool("sad", false);
+         Person.SetBool("happy", false);
+         Person.SetBool("idle", false);
+      }
+      else if (Emotion == 3)
+      {
+         Person.SetBool("sad", true);
+         Person.SetBool("happy", false);
+         Person.SetBool("idle", false);
+         Person.SetBool("angry", false);
+         Person.SetBool("thinks", false);
+         Person.SetBool("confused", false);
+      }
+      else if (Emotion == 4)
+      {
+         //set thinking sprite true 
+         Person.SetBool("thinks", true);
+         //set all others false to avoid glitching
+         Person.SetBool("confused", false);
+         Person.SetBool("sad", false);
+         Person.SetBool("happy", false);
+         Person.SetBool("idle", false);
+         Person.SetBool("angry", false);
+      }
+      else if (Emotion == 5)
+      {
+         Person.SetBool("happy", true);
+         Person.SetBool("idle", false);
+         Person.SetBool("angry", false);
+         Person.SetBool("thinks", false);
+         Person.SetBool("confused", false);
+         Person.SetBool("sad", false);
+      }
+      else if (Emotion == 6)
+      {
+         Person.SetBool("confused", true);
+         Person.SetBool("sad", false);
+         Person.SetBool("happy", false);
+         Person.SetBool("idle", false);
+         Person.SetBool("angry", false);
+         Person.SetBool("thinks", false);
+      }
+
+
+
+
+   }
   
   private IEnumerator PlayDialogue(DialogueSegment segment)
   {
    PlayingDialogue = true;
    BodyText.SetText(string.Empty);
    SubjectText.SetText(segment.SubjectText);
-  People = segment.Order;
+   Emotion = segment.Emotion;
    
     float delay = 1f / segment.LettersPerSecond;
    for (int i = 0; i < segment.DialogueToPrint.Length; i++)
