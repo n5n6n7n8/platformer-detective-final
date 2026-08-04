@@ -122,6 +122,71 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &62978951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.67
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f3572f9fc3a7e479492714ac5fad928a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f3572f9fc3a7e479492714ac5fad928a, type: 2}
+    - target: {fileID: 919132149155446097, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
+      propertyPath: m_Name
+      value: Bar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 41070f4cb5ce9430c9b54836228bed3e, type: 3}
 --- !u!1 &177106581
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,41 +314,41 @@ MonoBehaviour:
   DialogueSegments:
   - SubjectText: Detective
     DialogueToPrint: Aha I have solved the caper
-    Skippable: 0
+    Skippable: 1
     LettersPerSecond: 23
     Emotion: 1
   - SubjectText: Detective
     DialogueToPrint: BUT I AM SO ANGRY
-    Skippable: 0
+    Skippable: 1
     LettersPerSecond: 23
     Emotion: 2
   - SubjectText: Detective
     DialogueToPrint: because it was my best friend :(
-    Skippable: 0
+    Skippable: 1
     LettersPerSecond: 23
     Emotion: 3
   - SubjectText: Detective
     DialogueToPrint: and he was dating my wife!?!?!
-    Skippable: 0
+    Skippable: 1
     LettersPerSecond: 23
     Emotion: 4
   - SubjectText: Detective
     DialogueToPrint: But I have finally cracked the case so thats good!
-    Skippable: 0
+    Skippable: 1
     LettersPerSecond: 23
     Emotion: 5
   - SubjectText: Detective
     DialogueToPrint: What should I do next?
-    Skippable: 0
+    Skippable: 1
     LettersPerSecond: 23
     Emotion: 6
   SubjectText: {fileID: 1053350104}
   BodyText: {fileID: 1072006841}
-  selfDestruct: 0
+  selfDestruct: 1
   moveOn: 0
   hasAnim: 0
   changeScene: 0
-  selfDestructing: {fileID: 0}
+  selfDestructing: {fileID: 1349491973}
   Add: {fileID: 0}
   Remove: {fileID: 0}
   Person: {fileID: 1903382312}
@@ -441,7 +506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1099, y: -688}
+  m_AnchoredPosition: {x: -1082, y: -533}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053350104
@@ -473,8 +538,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -575,8 +640,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: -624}
-  m_SizeDelta: {x: 1961.7565, y: 146.8408}
+  m_AnchoredPosition: {x: 174.2843, y: -586.8366}
+  m_SizeDelta: {x: 1974.3251, y: 200.514}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1072006841
 MonoBehaviour:
@@ -779,6 +844,67 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1585719573
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.248375
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.46
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.92
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.2804
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
+      propertyPath: m_Name
+      value: Wall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1ff545efb6c646ada37ad045924f909, type: 3}
 --- !u!1 &1603411165
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,8 +1008,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1072, y: -534}
-  m_SizeDelta: {x: 160.897, y: 100}
+  m_AnchoredPosition: {x: -992, y: -301}
+  m_SizeDelta: {x: 261.0076, y: 164.9246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1903382312
 Animator:
@@ -953,3 +1079,5 @@ SceneRoots:
   - {fileID: 1349491977}
   - {fileID: 1603411168}
   - {fileID: 603671155}
+  - {fileID: 62978951}
+  - {fileID: 1585719573}
