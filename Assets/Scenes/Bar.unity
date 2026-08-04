@@ -216,6 +216,105 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &603671152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603671155}
+  - component: {fileID: 603671154}
+  - component: {fileID: 603671153}
+  m_Layer: 0
+  m_Name: UIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &603671153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603671152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b567cf3c6f94962b1dec163cd022cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueSegments:
+  - SubjectText: Detective
+    DialogueToPrint: Aha I have solved the caper
+    Skippable: 0
+    LettersPerSecond: 23
+    Emotion: 1
+  - SubjectText: Detective
+    DialogueToPrint: BUT I AM SO ANGRY
+    Skippable: 0
+    LettersPerSecond: 23
+    Emotion: 2
+  - SubjectText: Detective
+    DialogueToPrint: because it was my best friend :(
+    Skippable: 0
+    LettersPerSecond: 23
+    Emotion: 3
+  - SubjectText: Detective
+    DialogueToPrint: and he was dating my wife!?!?!
+    Skippable: 0
+    LettersPerSecond: 23
+    Emotion: 4
+  - SubjectText: Detective
+    DialogueToPrint: But I have finally cracked the case so thats good!
+    Skippable: 0
+    LettersPerSecond: 23
+    Emotion: 5
+  - SubjectText: Detective
+    DialogueToPrint: What should I do next?
+    Skippable: 0
+    LettersPerSecond: 23
+    Emotion: 6
+  SubjectText: {fileID: 1053350104}
+  BodyText: {fileID: 1072006841}
+  selfDestruct: 0
+  moveOn: 0
+  hasAnim: 0
+  changeScene: 0
+  selfDestructing: {fileID: 0}
+  Add: {fileID: 0}
+  Remove: {fileID: 0}
+  Person: {fileID: 1903382312}
+  sceneName: 
+--- !u!222 &603671154
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603671152}
+  m_CullTransparentMesh: 1
+--- !u!224 &603671155
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603671152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 947.4641}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1014.012, y: 311.09375}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &694910919
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,3 +952,4 @@ SceneRoots:
   - {fileID: 177106583}
   - {fileID: 1349491977}
   - {fileID: 1603411168}
+  - {fileID: 603671155}
